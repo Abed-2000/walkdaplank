@@ -3,7 +3,7 @@ import pika
 from dotenv import load_dotenv
 
 load_dotenv()
-myIP = os.getenv('')
+myIP = os.getenv('DARRYL_IP')
 
 main_machine_ip = os.getenv('ABED_IP')
 connection_params = pika.ConnectionParameters(host=main_machine_ip)
@@ -13,7 +13,7 @@ channel = connection.channel()
 
 channel.queue_declare(queue = os.getenv("RabbitQueue"), durable=True)
 
-message = "Hello from Sending Machine " +  myIP "!"
+message = "Hello from Sending Machine " +  str(myIP) + "!"
 channel.basic_publish(exchange='',
                       routing_key = os.getenv('RabbitQueue'),
                       body=message)
