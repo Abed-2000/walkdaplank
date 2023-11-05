@@ -50,10 +50,6 @@ The development of Man Overboard expanded our knowledge in computer vision, real
 
 The next order of business for Man Overboard is to enable remote live video feed to the crew from the swarm, improving real-time monitoring capabilities. Future plans include:
 
-- Integration with ship navigation systems for automatic course adjustments.
-- Implementing machine learning models to enhance detection accuracy.
-- Collaboration with cruise industry stakeholders to establish Man Overboard as an industry standard for maritime safety.
-
 ## 🛠️ Built with
 
 - OpenCV: Real-time image and video processing.
