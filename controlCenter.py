@@ -22,7 +22,8 @@ channel = connection.channel()
 channel.queue_declare(queue=RabbitQueue, durable=True)
 
 def callback(ch, method, properties, body):
-    print(f"Received: {body}")
+    received_data = body.decode('utf-8')
+    print(f"Received: {received_data}")
 
 channel.basic_consume(queue=RabbitQueue, on_message_callback=callback, auto_ack=True)
 
