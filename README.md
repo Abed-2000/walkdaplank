@@ -1,7 +1,7 @@
 <h1 align="center">Man Overboard</h1>
 
 <p align="center">
-  <em>Your Guardian of Maritime Safety</em>
+  <em>Advanced tech for cruise ship safety, rapid detection, and crew alerts in critical situations.</em>
 </p>
 
 ## 🚀 Quick Start
