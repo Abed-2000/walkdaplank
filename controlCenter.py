@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ABED_IP = os.getenv("ABED_IP")
+CONTROL_CENTER_IP = os.getenv("CONTROL_CENTER_IP")
 RabbitUser = os.getenv("RabbitUser")
 RabbitPass = os.getenv("RabbitPass")
 RabbitVHOST = os.getenv("RabbitVHOST")
 RabbitQueue = os.getenv("RabbitQueue")
 
 connection_params = pika.ConnectionParameters(
-    host=ABED_IP,
+    host=CONTROL_CENTER_IP,
     virtual_host=RabbitVHOST,
     credentials=pika.PlainCredentials(RabbitUser, RabbitPass)
 )
@@ -22,7 +22,8 @@ channel = connection.channel()
 channel.queue_declare(queue=RabbitQueue, durable=True)
 
 def callback(ch, method, properties, body):
-    print(f"Received: {body}")
+    received_data = body.decode('utf-8')
+    print(f"Received: {received_data}")
 
 channel.basic_consume(queue=RabbitQueue, on_message_callback=callback, auto_ack=True)
 
