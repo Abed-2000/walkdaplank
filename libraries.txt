@@ -1,0 +1,3 @@
+opencv
+pika
+python-dotenv
