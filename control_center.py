@@ -14,7 +14,7 @@ connection_params = pika.ConnectionParameters(
 connection = pika.BlockingConnection(connection_params)
 channel = connection.channel()
 
-channel.queue_declare(queue = os.getenv('RabbitQueue'))
+channel.queue_declare(queue = os.getenv('RabbitQueue'), durable=True)
 
 def callback(ch, method, properties, body):
     print(f"Received: {body}")

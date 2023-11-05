@@ -11,7 +11,7 @@ connection_params = pika.ConnectionParameters(host=main_machine_ip)
 connection = pika.BlockingConnection(connection_params)
 channel = connection.channel()
 
-channel.queue_declare(queue = os.getenv("RabbitQueue"))
+channel.queue_declare(queue = os.getenv("RabbitQueue"), durable=True)
 
 message = "Hello from Sending Machine " +  myIP "!"
 channel.basic_publish(exchange='',
