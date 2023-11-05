@@ -56,6 +56,7 @@ The next order of business for Man Overboard is to enable remote live video feed
 - RabbitMQ: Real-time message queuing for crew alerts.
 - dotenv: Secure configuration management.
 - Python: The primary programming language for system development.
+- ZeroTier: Network virtualization for secure communication.
 
 <hr>
 
